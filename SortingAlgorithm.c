@@ -11,8 +11,20 @@ void preencheRegistros(int *registros){
     }
 }
 
-void ordenaRegistros(int *registros){
-  printf("NÃO IMPLEMENTADO\n");
+void insertionSort(int *registros){
+  int i, troca, atual;
+  for(i = 1; i<TAMREGISTROS; i++){
+    atual = i;
+    while (atual!=0){
+      int anterior = atual - 1;
+      if(registros[atual] < registros[anterior]){
+        troca = registros[atual];
+        registros[atual] = registros[anterior];
+        registros[anterior] = troca;
+      }
+      atual = atual - 1;
+    }
+  }
 }
 
 void imprimeRegistros(int *registros){
@@ -50,7 +62,7 @@ int main(){
     switch (opcao) {
       case 0: printf("Encerrando ...\n");
       break;
-      case 1: ordenaRegistros(registros);
+      case 1: insertionSort(registros);
       break;
       case 2: imprimeRegistros(registros);
       break;
