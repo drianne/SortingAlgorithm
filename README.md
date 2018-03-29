@@ -50,3 +50,13 @@ O insertion sort é considerado um algoritmo simples e natural, pois remonta o n
 ### Algoritmo implementado
 
 Com fins didáticos, o algoritmo implementado aqui corresponde à uma ordenação através do insertion sort com vetor preenchido por valores aleatórios, em que o tamanho do mesmo será mudado a fim de medir a velocidade do algoritmo. Dessa forma, será gerado gráfico de modo a demonstrar visualmente a complexidade O(n²) do algoritmo. 
+
+### Como utilizar
+
+Levando em consideração que o sistema usado seja linux, basta entrar na pasta pelo terminal e digitar gcc -o exec SortingAlgorithm.c para utilizar o ordenador. O gerador de gráfico foi desenvolvido em python, assim, basta digitar no terminal python3 gerandoGraficos.py.
+
+### Resultados 
+
+Utilizando a instrução time no terminal é possível coletar o tempo de execução do processo de ordenação, dessa forma, os valores são destinados ao vetor dados que é utilizado para gerar o gráfico. Nesse sentido, obteve-se o gráfico esperado através dos dados que foram coletados, conforme apresentado abaixo.
+
+![img](https://preview.ibb.co/jTD7FS/Figure_1.png)
