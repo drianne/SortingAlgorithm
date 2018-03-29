@@ -1,23 +1,19 @@
 import matplotlib.pyplot as plt
 
-#dados em segundos contando com o caso de cem mil dados
+#Tempo de execucao do Insertion Sort em segundos para cada qtd de elementos
 
-condicoes = [10,50,100,500,1000,5000,10000,50000,100000]
+condicoes = [10,25,50,75,100,250,500,750,1000,2500,5000,7500,10000,25000,50000,75000,100000]
 
-dados = [08.09, 10.84, 11.02, 12, 12.93, 13.13, 15.3, 17.76, 31.86 ]
+dados = [0.000002,0.000003,0.000015,0.000029,0.000056,0.000214,
+         0.000665,0.001416,0.002529,0.017243,0.056830,0.125450,
+         0.226864,1.381288,5.432714,12.330618,22.930238]
 
-
-#Escalas 10,100,1000,10000,100000,1000000
-
-#dados_real = [0.061,1.622,2.208,2.633,2.546,1265.742]
-
-#dados_user = [0.044, 0.000, 0.008, 0.248, 0.836, 1263.86]
-
-#dados_sys = [0.016, 0.000, 0.000, 0.000, 0.052]
-
-
-#Grafico com os valores do estado real
-
-plt.title("Dados tempo gravado com cronômetro, incluindo tempo de encerramento")
+#Criando grafico mais geral
+plt.rcParams['figure.figsize'] = (10,8)
+plt.xlabel('n')
+plt.ylabel('s')
+plt.xlim(0,100000)
+plt.ylim(0,25)
+plt.title("Tempo decorrido na ordenacao")
 plt.plot(condicoes, dados)
 plt.show()
