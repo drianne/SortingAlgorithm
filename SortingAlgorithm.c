@@ -27,6 +27,19 @@ void insertionSort(int *registros){
   }
 }
 
+void bubbleSort(int *registros){
+  int i, j, aux;
+  for (i = 1; i < TAMREGISTROS; i++) {
+    for (j = 0; j < TAMREGISTROS - 1; j++) {
+      if (registros[j] > registros[j + 1]) {
+        aux = registros[j];
+        registros[j] = registros[j + 1];
+        registros[j + 1] = aux;
+      }
+    }
+  }
+}
+
 void imprimeRegistros(int *registros){
   int i;
   printf("\n\nREGISTROS\n");
@@ -39,8 +52,9 @@ void imprimeRegistros(int *registros){
 int menu(){
   int op;
   printf("\n\n\n===================================================== MENU ==================================================================\n");
-  printf("1 - Ordenar vetor \n");
+  printf("1 - Ordenar vetor Insertion Sort \n");
   printf("2 - Printar o vetor\n");
+  printf("3 - Ordenar vetor Bubble Sort\n");
   printf("0 - SAIR");
   printf("\n\n");
   printf("Digite a opcao desejada:");
@@ -65,6 +79,8 @@ int main(){
       case 1: insertionSort(registros);
       break;
       case 2: imprimeRegistros(registros);
+      break;
+      case 3: bubbleSort(registros);
       break;
       default:
         printf("Opcao Inexistente\n");
