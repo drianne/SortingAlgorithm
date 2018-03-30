@@ -51,12 +51,44 @@ O insertion sort é considerado um algoritmo simples e natural, pois remonta o n
 
 Com fins didáticos, o algoritmo implementado aqui corresponde à uma ordenação através do insertion sort com vetor preenchido por valores aleatórios, em que o tamanho do mesmo será mudado a fim de medir a velocidade do algoritmo. Dessa forma, será gerado gráfico de modo a demonstrar visualmente a complexidade O(n²) do algoritmo. 
 
+A dupla optou também por utilizar o algoritmo bubble sort para realizar uma comparação entre ambos. De modo que os dois são de complexidade O(n²), de modo que a diferença fica explícita nos gráficos mostrados na seção de resultados.
+
 ### Como utilizar
 
 Levando em consideração que o sistema usado seja linux, basta entrar na pasta pelo terminal e digitar gcc -o exec SortingAlgorithm.c para utilizar o ordenador. O gerador de gráfico foi desenvolvido em python, assim, basta digitar no terminal python3 gerandoGraficos.py.
 
 ### Resultados 
 
-Utilizando a instrução time no terminal é possível coletar o tempo de execução do processo de ordenação, dessa forma, os valores são destinados ao vetor dados que é utilizado para gerar o gráfico. Nesse sentido, obteve-se o gráfico esperado através dos dados que foram coletados, conforme apresentado abaixo.
+Para coletar o tempo de execução do algoritmo a ser analisado utilizou-se a coleta do clock inicial e final e a fórmula expressa no pedaço de código a seguir, para capturar em até milisegundos : 
+
+'''
+clock_t tempo;
+	tempo = clock();
+  
+  int i, j, aux;
+  for (i = 1; i < TAMREGISTROS; i++) {
+    for (j = 0; j < TAMREGISTROS - 1; j++) {
+      if (registros[j] > registros[j + 1]) {
+        aux = registros[j];
+        registros[j] = registros[j + 1];
+        registros[j + 1] = aux;
+      }
+    }
+  }
+  
+  printf("Tempo:%f",(clock() - tempo) / (double)CLOCKS_PER_SEC);
+
+'''
+
+Assim, os valores foram destinados a dois diferentes vetores, o dedicado ao insertion sort, principal tema dessa entrega e o vetor para o bubble sort, considerando o mesmo intervalo de quantidade de registros. Nesse sentido, obteve-se o gráfico esperado através dos dados que foram coletados, conforme apresentado abaixo.
 
 ![img](https://preview.ibb.co/jTD7FS/Figure_1.png)
+
+![img](https://preview.ibb.co/moXEUn/Figure_1.png)
+
+
+Assim, sobrepondo os gráficos é possível observar que o insertion sort, em azul, apresentou um desempenho superior na ordenação dos dados aleatórios, pois a variação no tempo de execução de acordo ao aumento do número de elementos é menor que o que ocorre com o bubble sort em laranja, ou seja, ele ordena uma maior quantidade de números em um menor tempo. 
+
+
+![img](https://preview.ibb.co/d3BPUn/Figure_1.png)
+
